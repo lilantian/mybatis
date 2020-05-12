@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <!-- mybatis别名定义 -->
+    <typeAliases>
+        <typeAlias alias="User" type="com.java.sky.entity.User"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--mysql驱动-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <!--mysql连接URL-->
+                <property name="url" value="jdbc:mysql://localhost:3306/dmgr?serverTimezone=UTC"/>
+                <!--mysql账户名-->
+                <property name="username" value="root"/>
+                <!--mysql密码-->
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="mapper/GoodsMapper.xml"></mapper>
+        <mapper resource="mapper/UserMapper.xml"></mapper>
+    </mappers>
+</configuration>
